@@ -9,6 +9,8 @@ if (number >= 0):
         print(f"Last digit of {number:d} is {lastDigit:d}" + " and is 0")
     elif (lastDigit < 6 and lastDigit != 0):
         print(f"Last digit of {number:d} is {lastDigit}" + " and is less than 6 and not 0")
-if (number < 0):
-    if (lastDigit < 6 and lastDigit != 0):
+elif (number < 0):
+
+    if (number < 0 or lastDigit < 6 and lastDigit != 0):
+    
         print(f"Last digit of {number:d} is {lastDigit*-1}" + " and is less than 6 and not 0")
