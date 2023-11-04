@@ -4,5 +4,4 @@ def element_at(my_list, idx):
         return None
     elif idx > my_list[-1]:
         return None
-    for idx in my_list:
-        return my_list[idx]
+    return my_list[idx]
