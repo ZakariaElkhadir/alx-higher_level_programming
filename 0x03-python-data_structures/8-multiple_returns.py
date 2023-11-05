@@ -1,7 +1,5 @@
-#!/usr/bin/python3
-def multiple_returns(sentens):
-    lsentens = len(sentens)
-    if lsentens == 0:
-        ntuple = (lsentens, None)
-    ntuple = (lsentens, sentens[0])
-    return ntuple
+def multiple_returns(sentence):
+    length = len(sentence)
+    first_char = sentence[0] if length > 0 else "None"
+    tup = length, first_char
+    return(tup)
