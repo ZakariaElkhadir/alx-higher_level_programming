@@ -25,7 +25,7 @@ int is_palindrom(listint_t **head)
     for (i = 0; i < count; i++)
     {
         arr[i] = tmp->n;
-        tmp = tmp->next
+        tmp = tmp->next;
     }
     for (i = 0,s = count - 1; i < s; i++, s-- )
     {
