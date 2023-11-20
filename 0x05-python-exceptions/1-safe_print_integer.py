@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def safe_print_integer(value):
-    if value == 89 or value == -89:
+    try:
         print(value)
         return True
-    else:
+    except: (TypeError, ValueError)
         return False
