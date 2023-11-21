@@ -22,7 +22,7 @@ class Square:
 
         Returns: the current square area.
         """
-        return self.__size ** 2
+        return self.__size * self.__size
 
     @property
     def size(self):
@@ -53,16 +53,22 @@ class Square:
         """
 
         if self.__size == 0:
-            print()
-        for i in range(self.__size):
-            print("#" * (self.__size))
+            print("")
+            return
+        [print("") for i in range(0, self.__position[i])]
+        for i in range(0, self.__size):
+            [print("", end="") for j in range(0, self.__position[0])]
+            [print("#", end="") for l in range(0, self.__size)]
+            print("")
 
     @property
     def position(self):
+        """position fun """
         return self.__position
 
     @position.setter
     def position(self, value):
+        """pisition fun"""
         if (not isinstance(value, tuple) or
                 len(value) != 2 or
                 not all(num >= 0)for num in value):
