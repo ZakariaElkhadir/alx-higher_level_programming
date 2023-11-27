@@ -6,8 +6,9 @@ class Rectangle:
     """Rectangle class"""
 
     number_of_instances = 0
+    """int: the number of active instances"""
     print_symbol = '#'
-
+    """print sumbol"""
     def __init__(self, width=0, height=0):
         """Instantiation with optional width and height"""
         self.__width = width
@@ -54,7 +55,7 @@ class Rectangle:
         return (self.width * 2) + (self.height * 2)
 
     def __str__(self):
-        """create a rectangle with '#' """
+        """Return string representation """
         if not self.width or not self.height:
             return ""
         return((str(self.print_symbol) * self.width + "\n") * self.height)[:-1]
