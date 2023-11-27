@@ -34,7 +34,7 @@ class Rectangle:
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value < 0:
-            raise TypeError("height must be >= 0")
+            raise ValueError("height must be >= 0")
         self.__height = value
 
     def area(self):
@@ -50,8 +50,7 @@ class Rectangle:
 
     def __str__(self):
         """create a rectangle with '#' """
-        str = ""
-        if self.width != 0 or self.height != 0:
-            str += "\n".join("#" * self.width for i in range(self.height))
+        if self.width == 0 or self.height == 0:
+            return ""
 
-        return str
+        return "\n".join("#" * self.width for _ in range(self.height))
