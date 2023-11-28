@@ -1,4 +1,10 @@
+#!/usr/bin/python3
+"""that divides all elements of a matrix."""
+
+
 def matrix_divided(matrix, div):
+    """function that divides all elements of a matrix."""
+
     if not isinstance(div, (int, float)):
         raise TypeError("div must be a number")
     if not isinstance(matrix, list) or len(matrix) == 0:
@@ -15,6 +21,8 @@ def matrix_divided(matrix, div):
                 raise TypeError("matrix must be a matrix (list of lists) " +
                                 "of integers/floats")
     return [[round(x / div, 2) for x in row] for row in matrix]
+
+
 if __name__ == "__main__":
     import doctest
     doctest.testfile('tests/2-matrix_divided.py')
