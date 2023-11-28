@@ -27,4 +27,5 @@ Test not string arg1:
 Test not string arg2:
     >>> say_my_name("Hello", 39)
     Traceback (most recent call last):
+    ...
     TypeError: last_name must be a string

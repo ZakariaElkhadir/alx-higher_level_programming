@@ -1,0 +1,59 @@
+Import module:
+    >>> print_square = __import__('4-print_square').print_square
+
+Test normal print 0:
+    >>> print_square(0)
+
+
+Test normal print 1:
+    >>> print_square(1)
+    #
+
+Test normal 2:
+    >>> print_square(2)
+    ##
+    ##
+    
+Test normal 3:
+    >>> print_square(3)
+    ###
+    ###
+    ###
+
+Test normal 4:
+    >>> print_square(4)
+    ####
+    ####
+    ####
+    ####
+
+Test normal 10:
+    >>> print_square(10)
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+
+Test negative:
+    >>> print_square(-5)
+    Traceback (most recent call last):
+    ...
+    ValueError: size must be >= 0
+
+Test float:
+    >>> print_square(5.0)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+Test str:
+    >>> print_square("zakaria")
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
