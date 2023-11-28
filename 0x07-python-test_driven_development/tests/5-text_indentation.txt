@@ -1,0 +1,54 @@
+Import module:
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+test with spaces:
+    >>> text_indentation("Hello          ")
+    Hello
+
+test with spaces2:
+    >>> text_indentation("        brotherrachid")
+    brotherrachid
+
+test string:
+    >>> text_indentation("Hello Jarvis")
+    Hello Jarvis
+
+test spaces string:
+    >>> text_indentation("Hello       World")
+    Hello       World
+
+Test all delimeters with spaces:
+    >>> text_indentation("Hello   :   どうもありがとう      ?    school.    愛してます")
+    Hello:
+    <BLANKLINE>
+    どうもありがとう?
+    <BLANKLINE>
+    school.
+    <BLANKLINE>
+    愛してます
+
+Test all delimeters:
+    >>> text_indentation("Hello: Holberton? school. fooo")
+    Hello:
+    <BLANKLINE>
+    Holberton?
+    <BLANKLINE>
+    school.
+    <BLANKLINE>
+    fooo
+
+Test newline:
+    >>> text_indentation("\n")
+    <BLANKLINE>
+
+Test number:
+    >>> text_indentation(131)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+Test none:
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
