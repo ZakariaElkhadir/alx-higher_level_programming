@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 def solve(board, N):
     # base case: if all queens are placed
     if board[N - 1] != -1:
