@@ -1,0 +1,7 @@
+Import function from module:
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+First Test:
+    >>> bg = BaseGeometry()
+    >>> type(bg) == BaseGeometry
+    True
