@@ -56,13 +56,22 @@ class Rectangle(Base):
         "Value validation method"
 
         if type(value) is not int:
-            raise TypeError("{} must be an integer".format(name))
+            raise TypeError(f"{name} must be an integer")
         if eq and value < 0:
-            raise ValueError("{} must be >= 0".format(name))
+            raise ValueError(f"{name} must be >= 0")
         elif not eq and value <= 0:
-            raise ValueError("{} must be > 0".format(name))
+            raise ValueError(f"{name} must be > 0")
         
     def area(self):
         """area method"""
         return self.height * self.width
 
+    def display(self):
+        """ prints rectangle as a # """
+        s = '\n' * self.y + \
+            (' ' * self.x + '#' * self.width + '\n') * self.height
+        print(s, end='')
+    
+    def __str__(self):
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+    
