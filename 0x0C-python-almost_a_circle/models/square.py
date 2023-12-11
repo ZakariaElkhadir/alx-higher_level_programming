@@ -1,19 +1,22 @@
 #!/usr/bin/python3
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
 
     def __init__(self, size, x=0, y=0, id=None):
         """Class constructor"""
-        super().__init__(size, size,  x , y, id)
-    
+        super().__init__(size, size,  x, y, id)
+
     def __str__(self):
-        """ return [Square] (<id>) <x>/<y> - <size> - in our case, width or height"""
+        """ str function """
         return '[{}] ({}) {}/{} - {}'.\
             format(type(self).__name__, self.id, self.x, self.y, self.width)
+
     @property
     def size(self):
         return self.width
+
     @size.setter
     def size(self, value):
         self.witdh = value
@@ -36,8 +39,7 @@ class Square(Rectangle):
             self.__update(*args)
         elif kwargs:
             self.__update(**kwargs)
-    
+
     def to_dictionary(self):
         """returns the dictionary representation of a Square:"""
         return {"id": self.id, "size": self.size, "x": self.x, "y": self.y}
-    
