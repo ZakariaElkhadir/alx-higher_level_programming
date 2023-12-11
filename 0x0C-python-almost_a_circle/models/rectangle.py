@@ -5,6 +5,8 @@ from models.base import Base
 
 class Rectangle(Base):
     """Class constructot"""
+
+
     def __init__(self, width, height, x=0, y=0, id=None):
         self.width = width
         self.height = height
@@ -49,6 +51,7 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
+
         self.validation("y", value)
         self.__y = value
 
@@ -74,26 +77,34 @@ class Rectangle(Base):
 
 
     def __str__(self):
+
+
         """__str__ function that returns a string"""
         return "[Rectangle] ({id}) {x}/{y} - {width}/{height}".format(
          id=self.id, x=self.x, y=self.y, width=self.width, height=self.height)
 
     def __update(self, id=None, width=None, height=None, x=None, y=None):
-        """privat function"""
+        '''Internal method that updates instance attributes via */**args.'''
         if id != None:
             self.id = id
-        if width !=  None:
-            self.witdh = width
+        if width != None:
+            self.width = width
         if height != None:
             self.height = height
-        if x is not None:
+        if x != None:
             self.x = x
-        if y is not None:
+        if y != None:
             self.y = y
 
     def update(self, *args, **kwargs):
+        """args and kwargs fun"""
         if args:
             self.__update(*args)
         elif kwargs:
             self.__update(**kwargs)
 
+    def to_dictionary(self):
+        '''Returns dictionary representation of this class.'''
+        return {"id": self.id, "width": self.__width, "height": self.__height,
+                "x": self.__x, "y": self.__y}
+    
