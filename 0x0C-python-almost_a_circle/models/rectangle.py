@@ -60,8 +60,8 @@ class Rectangle(Base):
         if eq and value < 0:
             raise ValueError(f"{name} must be >= 0")
         elif not eq and value <= 0:
-            raise ValueError(f"{name} must be > 0")
-        
+            raise ValueError("{} must be > 0".format(name))
+
     def area(self):
         """area method"""
         return self.height * self.width
@@ -71,7 +71,29 @@ class Rectangle(Base):
         s = '\n' * self.y + \
             (' ' * self.x + '#' * self.width + '\n') * self.height
         print(s, end='')
-    
+
+
     def __str__(self):
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
-    
+        """__str__ function that returns a string"""
+        return "[Rectangle] ({id}) {x}/{y} - {width}/{height}".format(
+         id=self.id, x=self.x, y=self.y, width=self.width, height=self.height)
+
+    def __update(self, id=None, width=None, height=None, x=None, y=None):
+        """privat function"""
+        if id != None:
+            self.id = id
+        if width !=  None:
+            self.witdh = width
+        if height != None:
+            self.height = height
+        if x is not None:
+            self.x = x
+        if y is not None:
+            self.y = y
+
+    def update(self, *args, **kwargs):
+        if args:
+            self.__update(*args)
+        elif kwargs:
+            self.__update(**kwargs)
+
