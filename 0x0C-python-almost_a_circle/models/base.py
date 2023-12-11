@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 from json import loads, dumps
-import csv
 
 
 class Base:
