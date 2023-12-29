@@ -9,13 +9,14 @@ class Square:
     Attributes:
         size: size of a square (1 side).
     """
-    def __init__(self, size=0):
+    def __init__(self, size=0, position=(0, 0)):
         """Creates new instances of square.
 
         Args:
             size: size of the square (1 side).
         """
         self.__size = size
+        self.__position = position
 
     def area(self):
         """Calculates the area of square.
@@ -55,6 +56,7 @@ class Square:
         if self.__size == 0:
             print("")
             return
+
         [print("") for i in range(0, self.__position[i])]
         for i in range(0, self.__size):
             [print("", end="") for j in range(0, self.__position[0])]
