@@ -1,4 +1,4 @@
---lists all genres from hbtn_0d_tvshows
+-- lists all genres from hbtn_0d_tvshows
 -- cat 13-count_shows_by_genre.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
 
 SELECT

@@ -7,4 +7,3 @@ LEFT JOIN tv_show_genres sg ON s.id = sg.show_id
 LEFT JOIN tv_genres g ON sg.genre_id = g.id
 WHERE s.title = 'Dexter'
 ORDER BY name ASC;
-
