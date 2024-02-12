@@ -2,7 +2,7 @@
 
 ## General
 
-Welcome to the JavaScript Basics repository! This README will guide you through the fundamentals of JavaScript programming. Whether you're a beginner or looking to refresh your knowledge, you're in the right place.
+Welcome to the JavaScript - Warm up repository! This README will guide you through the fundamentals of JavaScript programming. Whether you're a beginner or looking to refresh your knowledge, you're in the right place.
 
 ## Why JavaScript programming is amazing
 
