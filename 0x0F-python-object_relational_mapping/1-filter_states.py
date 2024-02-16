@@ -30,8 +30,8 @@ db = MySQLdb.connect(
 cursor = db.cursor()
 
 # Execute SQL query to select states whose names start with 'N'
-cursor.execute("SELECT * FROM states WHERE name\
-                LIKE BINARY 'N%' ORDER BY id ASC")
+cursor.execute("SELECT * FROM states WHERE name \
+LIKE BINARY 'N%' ORDER BY id ASC")
 
 # Fetch all rows from the result set
 rows = cursor.fetchall()
