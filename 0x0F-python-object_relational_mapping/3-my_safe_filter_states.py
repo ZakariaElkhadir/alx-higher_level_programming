@@ -2,6 +2,8 @@
 """
 database script
 """
+
+
 def main(args):
     """gets all state
     """
