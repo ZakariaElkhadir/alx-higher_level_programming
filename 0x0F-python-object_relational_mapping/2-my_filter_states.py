@@ -1,7 +1,12 @@
 #!/usr/bin/python3
-
+"""
+database sqript
+"""
 
 def main(args):
+    """
+    get state arrgument
+    """
     db = MySQLdb.connect(host='localhost', user=args[1], passwd=args[2], db=args[3])
 
     cursor = db.cursor()
