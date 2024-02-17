@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-"""gets all states via python
 """
-
-
+database script
+"""
 def main(args):
     """gets all state
     """
@@ -14,15 +13,17 @@ def main(args):
     cur = db.cursor()
     query = (
         "SELECT * FROM states "
-        "WHERE name LIKE BINARY '{}%' "
+        "WHERE name LIKE BINARY %s "
         "ORDER BY id ASC"
-    ).format(args[4])
-    cur.execute(query)
+    )
+    cur.execute(query, (args[4] + '%',))
     states = cur.fetchall()
     for state in states:
         print(state)
 
 
+
+        
 if __name__ == "__main__":
     import MySQLdb
     import sys
