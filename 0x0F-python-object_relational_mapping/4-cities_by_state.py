@@ -25,3 +25,4 @@ def main(args):
 if __name__ == "__main__":
     import MySQLdb
     import sys
+    main(sys.argv)
