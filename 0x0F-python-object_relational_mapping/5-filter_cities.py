@@ -1,15 +1,19 @@
 #!/usr/bin/python3
+"""
+takes in the name of a state as an argument
+and lists all cities of that state
+"""
 
 
-def main(argument):
+def main(args):
+    """ All cities by state
+    """
     db = MySQLdb.connect(
         host='localhost',
-        user=argument[1],
-        passwd=argument[2],
-        db=argument[3] 
-        )
-    cursor = db.cursor()
-
+        user=args[1],
+        passwd=args[2],
+        db=args[3])
+    cur = db.cursor()
     query = (
         "SELECT c.name "
         "FROM cities c "
@@ -17,14 +21,11 @@ def main(argument):
         "WHERE s.name = %s "
         "ORDER BY c.id ASC"
     )
-    cursor.execute(query, (argument[4],))
-    states = cursor.fetchall()
-    
-    """Join the states with commas and spaces using map and lambda"""
-    comma_seperated_states = ", ".join(map(lambda x: "%s" % x, states))
-    print(comma_seperated_states)
-                  
-    
+    cur.execute(query, (args[4],))
+    states = cur.fetchall()
+    print(", ".join(map(lambda x: "%s" % x, states)))
+
+
 if __name__ == "__main__":
     import MySQLdb
     import sys
