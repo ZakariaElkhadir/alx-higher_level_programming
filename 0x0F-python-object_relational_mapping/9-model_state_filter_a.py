@@ -17,7 +17,8 @@ if __name__ == "__main__":
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    states_five = session.query(State).order_by(State.id).limit(5).all()
+    states_five = session.query(State).order_by(State.id)\
+        .filter(State.name.ilike("%a%")).all()
 
     for state in states_five:
         print(f"{state.id}: {state.name}")
