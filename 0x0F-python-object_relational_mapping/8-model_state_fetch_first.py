@@ -6,6 +6,7 @@ import sys
 from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+
 if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
@@ -17,11 +18,11 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    states = session.query(State).order_by(State.id).all()
+    state = session.query(State).order_by(State.id).first()
 
-    for state in states:
-        if state == states[0]:
+    
+    if state:
 
-            print(f"{state.id}: {state.name}")
-        break
+        print(f"{state.id}: {state.name}")
+        
     session.close()
