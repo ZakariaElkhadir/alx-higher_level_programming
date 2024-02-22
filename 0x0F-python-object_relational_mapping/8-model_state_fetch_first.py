@@ -20,9 +20,7 @@ if __name__ == "__main__":
 
     state = session.query(State).order_by(State.id).first()
 
-    
     if state:
-
         print(f"{state.id}: {state.name}")
-        
+
     session.close()
