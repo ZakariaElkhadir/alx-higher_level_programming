@@ -25,6 +25,6 @@ if __name__ == "__main__":
     if states:
         print(states.id)
     else:
-        print("Nor found")
+        print("Not found")
 
     session.close()
