@@ -19,7 +19,7 @@ if __name__ == "__main__":
     session = Session()
 
     states_update = session.query(State).filter(
-        State.name == 'Louisiana').order_by(State.id == 2).first()
+        State.id == 2).first()
 
     if states_update:
         states_update.name = 'New Mexico'
