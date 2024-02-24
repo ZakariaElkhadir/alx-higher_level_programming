@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-#!/usr/bin/python3
+
 """
 database model
 """
@@ -26,5 +26,5 @@ if __name__ == "__main__":
     for state in states_delete:
         session.delete(state)
     session.commit()
-        
+
     session.close()
