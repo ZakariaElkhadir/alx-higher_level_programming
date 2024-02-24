@@ -14,13 +14,15 @@ if __name__ == "__main__":
     password = sys.argv[2]
     db_name = sys.argv[3]
 
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(username, password, db_name), pool_pre_ping=True)
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
+        username, password, db_name), pool_pre_ping=True)
 
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    cities_states = session.query(State, City).join(City, State.id == City.state_id).order_by(City.id)
+    cities_states = session.query(State, City).join(
+        City, State.id == City.state_id).order_by(City.id)
 
     for state, city in cities_states:
         print(f'{state.name}: ({city.id}) {city.name}')
