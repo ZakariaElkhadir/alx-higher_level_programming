@@ -1,3 +1,3 @@
 #!/bin/bash
-#curl to the end 
-curl -sLX GET $1
+# cURL to the 3nd
+curl -sL "$1"
