@@ -1,3 +1,3 @@
 #!/bin/bash
-#body size
-curl -sw '%{size_download}\n' -o /dev/null "$1"
+# Check if URL argument is provided
+curl -s "$1" | wc -c
