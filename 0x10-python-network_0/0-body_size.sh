@@ -1,3 +1,3 @@
 #!/bin/bash
-# Check if URL argument is provided
-curl -s "$1" | wc -c
+#script that takes in a URL, sends a request to that URL,
+curl -sI "$1"| grep -i 'content-length' | awk '{print $2}'
