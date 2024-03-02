@@ -11,7 +11,7 @@ if __name__ == "__main__":
     values = {'q': sys.argv[1] if len(sys.argv) > 1 else ""}
     request = requests.post(url, data=values)
     try:
-        json = request
+        json = request.json()
         if json:
             print("[{}] {}".format(json['id'], json['name']))
         else:
