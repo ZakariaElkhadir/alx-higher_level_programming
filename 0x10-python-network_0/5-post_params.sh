@@ -1,4 +1,4 @@
 #!/bin/bash
 #send email and subject
 
-curl -sd "subject=I will always be here for PLD" -d "body=Email body" "test@gmail.com"
+curl -sd "email=test@gmail.com" -d "subject=I will always be here for PLD" $@
