@@ -1,11 +1,8 @@
 #!/usr/bin/node
 
 const fs = require('fs');
-const path = require('path');
+const file = process.argv[2];
 
-const readme = path.join(__dirname, 'README.md');
-
-fs.readFile(readme, 'utf8', (err, data) => {
-  if (err) throw err;
-  console.log(data);
+fs.readFile(file, 'utf8', (err, data = err) => {
+    console.log(data);
 });
