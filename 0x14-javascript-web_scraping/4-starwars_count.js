@@ -14,7 +14,7 @@ request(url, (err, response, body) => {
       const result = JSON.parse(body);
       let count = 0;
       for (const character of result.characters) {
-        if (character.includes('18')) {
+        if (character.search('/18/') > 0) {
           count++;
         }
       }
