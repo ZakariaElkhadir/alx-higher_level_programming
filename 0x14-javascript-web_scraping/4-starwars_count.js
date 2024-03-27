@@ -1,26 +1,25 @@
 #!/usr/bin/node
-const id = process.argv[2];
-const url = 'https://swapi-api.hbtn.io/api/films/' + id;
 
 const request = require('request');
+const url = process.argv[2];
 
-request(url, (err, response, body) => {
-  if (err) {
-    console.error('Error:', err);
+request(url, function (error, response, body) {
+  if (error) {
+    console.error('Error:', error);
   } else if (response.statusCode !== 200) {
     console.error('Error: Unexpected status code', response.statusCode);
   } else {
     try {
-      const result = JSON.parse(body);
+      const results = JSON.parse(body).results;
       let count = 0;
-      for (const character of result.characters) {
-        if (character.search('/18/') > 0) {
-          count++;
+      for (const i in results) {
+        for (const char of results[i].characters) {
+          if (char.search('/18/') > 0) count++;
         }
       }
       console.log(count);
     } catch (parseError) {
-      console.error('Error: Invalid JSON format', parseError);
+      console.error('Error parsing JSON:', parseError);
     }
   }
 });
